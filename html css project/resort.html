@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OceanVibes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family:'poppins',sans-serif;
+            background: #f5f7f6;
+            color:#12333d;
+        }
+        a{
+            text-decoration: none;
+        }
+        .navbar{
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            background: #092d38;
+            color: white;
+            align-items: center;
+            position: sticky;
+            z-index: 100;
+        }
+        .logo{
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+            
+            
+        }
+        .logo span{
+            color: aqua;
+        }
+        .navbar nav{
+            display: flex;
+            gap: 40px;
+        }
+        .navbar nav a{
+            color: white;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+       .navbar nav a:hover{
+        color:rgb(90, 205, 205)
+        }
+        .explore-btn{
+                display: inline-block;
+                padding: 15px 22px; 
+                border-radius: 30px;
+                color: rgb(18, 220, 220);
+                font-weight: 600;
+                transition: 0.3s;
+        }
+        .explore-btn:hover{
+            background: white;
+           
+        }
+        .hero{
+            min-height: 88px;
+            padding: 100px;
+            display: flex;
+            position: relative;
+            color: white;
+            background: linear-gradient(90deg, rgba(17, 17, 17, 0.8), rgba(0, 0, 0, 0.35)),
+            url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2000&q=85');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-content{
+            max-width: 800px;
+        }
+        .tag{
+            color: aqua;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            margin-bottom: 22px;
+        }
+        .hero h1{
+            font-size: clamp(42px,6vw,82px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+
+        }
+        .hero h1 span{
+            color: aqua;
+        }
+        .description{
+            max-width: 540px;
+            color: white;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+        .hero-actions{
+            margin-bottom: 25px;
+
+        }
+        .hero-actions span{
+            margin-left: 11px;
+        }
+        .text-btn{
+            color:white;
+            font-size: 14px;
+            border-bottom: 1px solid aqua;
+            padding-bottom: 7px;
+        }
+        .intro{
+            padding: 100px 10%;
+            background:  white;
+            text-align: center;
+           
+        }
+        .intro h1:hover{
+            font-size: 45px;
+            background: aqua;
+            transition: 0.3s ease-in-out;
+            border-radius: 50px;
+        }
+            .section-heading {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.section-heading .tag {
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.3;
+}
+.rooms{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.main{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.cards
+{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+}
+.cards:hover
+{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
+}
+.cards img
+{
+    width: 42%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+.text-left {
+    flex: 1;
+}
+.text-left h3{
+    font-size: 26px;
+    margin-bottom: 15px;
+
+}
+.explore-btn1{
+    display: inline-block;
+    margin: 12px;
+    padding: 10px 17px;
+    border-radius: 25px;
+    background:#12333d ;
+    color: white;
+    font-size: 13px;
+    transition: 0.3s;
+}
+.explore-btn1:hover{
+    background-color: aqua;
+    color: #12333d;
+}
+.feature{
+    color: rgb(71, 124, 124);
+}
+.boxes{
+    display: grid;
+    grid-template-columns: 1fr,1fr,1fr;
+    gap: 25px;
+    padding: 30px 7% 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.destination-card{
+    flex: 1 1 300px;
+    min-height: 380px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 18px;
+    color: white;
+    background-position: center ;
+    background-size: cover;
+    transition: 0.2s;
+
+
+}
+.destination-card:hover{
+    transform: translateY(-8px);
+
+}
+.destination-card:hover::before{
+    background: linear-gradient(0deg,black,black);
+}
+.maldives{
+     background-image: url("https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85");
+}
+.mauritius {
+    background-image: url("https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85");
+}
+
+.seychelles {
+    background-image: url("https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85");
+}
+
+.sri-lanka {
+    background-image: url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85");
+}
+
+.zanzibar {
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85");
+}
+
+.reunion {
+    background-image: url("https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=900&q=85");
+}
+
+.destination-card .number,
+.destination-card p,
+.destination-card h3,
+.destination-card a {
+    position: relative;
+    
+}
+
+.destination-card .number {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-size: 19px;
+    color: #65ded5;
+}
+
+.destination-card p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #d1e8e6;
+    margin-bottom: 12px;
+}
+
+.destination-card h3 {
+    color: white;
+    
+    margin-bottom: 18px;
+    transition: .3s;
+}
+
+.destination-card h3 span {
+    color: #65ded5;
+    font-size: 24px;
+}
+
+.destination-card h3:hover {
+    color: #65ded5;
+}
+.name{
+    color: white;
+}
+
+.journey-link {
+    color: white;
+    font-size: 13px;
+    border-bottom: 1px solid #ebefef;
+    padding-bottom: 6px;
+}
+
+.journey-link:hover {
+    color: #f6faf9;
+}
+
+.link{
+    color: #f5f7f6;
+    transition: 0.3s;
+}
+.link:hover{
+    color: #65ded5;
+ 
+}
+
+.about{
+    background: #65ded5;
+
+}
+.tag1{
+    text-align: center;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+.h2{
+    text-align: center;
+    color: white;
+    padding: 20px;
+
+}
+.p{
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+.bottom{
+    background: #12333d;
+
+}
+.p1{
+    padding: 20px;
+    text-align: center;
+    color: azure;
+    border-radius: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="#home" class="logo">Ocean<span>.</span></a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#Rooms">Rooms</a>
+            <a href="#journey">Journey</a>
+            <a href="#about">About</a>
+            </nav>
+            <a href="#destinations" class="explore-btn">Explore Now ↗</a>
+    </header>
+<main>
+    <section class='hero' id="home">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="tag">THE WORLD IS YOUR OCEAN</p>
+
+            <h1>BEYOND THE <BR>
+                <span> BLUE HORIZON</span>
+            </h1>
+            <p class="description">
+                 Find your own paradise. Explore hidden islands,
+                untouched beaches, and the beauty of the unknown.
+            </p>
+            <div class="hero-actions">
+                <a href="#destination" class="explore-btn">
+                   Start Exploring<span>↗</span>
+                </a>
+            </div>
+            <a href="#about" class="text-btn">Discover the Oceean ➔
+            </a>
+    </section>
+     <section class="intro" >
+            <p class="tag">The Journey Start</p>
+            <h1>Enjoy Everyday<br>WithThe<br><span>OceanVibes</span></h1>
+        </div>
+     </section>
+
+<section class="main" id="Rooms">
+    <article class="cards">
+     <img src="photo-1611892440504-42a792e24d32.avif"
+                alt="Luxury resort bedroom" width="400">
+                <div class="text-left">
+                    <h1>Luxury Bedroom With Sea View</h1>
+                    <p>A comfortable poolside room designed for couples, friends or small families.<br> Offering a relaxed atmosphere with direct access to the garden and swimming pool.<br> </p>
+                    <p class="feature">➔Private Balcony</p>
+                    <p class="feature">➔Ocean View</p>
+                    <p class="feature">➔Premium Comfort</p>
+                    <a href="#Rooms" class="explore-btn1">Explore Rooms</a>
+                    
+
+
+                </div>
+    </article>
+    <article class="cards">
+        <img src="pool.jpg"
+        alt="Pool With sea View" width="400">
+        <div class="text-left">
+            <h1>SWIMMINGPOOL WITH SEA View</h1>
+            <p>Relax and enjoy our beautiful swimming pool surrounded by tropical greenery</p>
+            <p class="feature">➔Poolside Relaxation</p>
+            <p class="feature">➔Ocean View</p>
+            <p class="feature">➔Beautiful Views</p>
+            <a href="#Rooms" class="explore-btn1">Explore More</a>
+        </div>
+    </article>
+        <article class="cards">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=85"
+            alt="Fine Dinning" width="400">
+            <div class="text-left">
+                <h1>FINE DINNING</h1>
+                <p>Enjoy an unforgettable dining experience at our resort<br>featuring delicious local and international cuisines prepared by expert chefs.<br>Relax in an elegant atmosphere and savor every bite with exceptional service and beautiful surroundings.</p>
+                <p class="feature">➔ International Cuisine</p>
+                <p class="feature">➔ Elegant Atmosphere</p>
+                <p class="feature">➔ Memorable Dining</p>
+                
+                <a href="Rooms" class="explore-btn1">Explore More</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="destinations" id="destinations">
+            <div class="section-top"></div>
+            <p class="tag"><h1>Discover Cape Town<br>
+from Ocean Vibes.</h1></p>
+    </section>
+ 
+
+<section class="boxes" id="journey">
+
+    <div class="destination-card maldives">
+        <div class="number">01</div>
+        <p>INDIAN OCEAN</p>
+
+        <a href="https://visitmaldives.com/en" target="_blank">
+            <h1 class="name">Maldives <span>↗</span></h1>
+        </a>
+
+        <a href="#journey" class="link">Explore Journey</a>
+    </div>
+
+    <div class="destination-card mauritius">
+        <div class="number">02</div>
+        <p>INDIAN OCEAN</p>
+
+        <a href="https://mauritiusnow.com/" target="_blank">
+            <h1 class="name">Mauritius <span>↗</span></h1>
+        </a>
+
+        <a href="#journey" class="link">Explore Journey</a>
+    </div>
+
+    <div class="destination-card seychelles">
+        <div class="number">03</div>
+        <p>INDIAN OCEAN</p>
+
+        <a href="https://seychelles.com/" target="_blank">
+            <h1 class="name">The Seychelles <span>↗</span></h1>
+        </a>
+
+        <a href="#journey" class="link">Explore Journey</a>
+    </div>
+
+    <div class="destination-card sri-lanka">
+        <div class="number">04</div>
+        <p>INDIAN OCEAN</p>
+
+        <a href="https://www.srilanka.travel/" target="_blank">
+            <h1 class="name">Sri Lanka <span>↗</span></h1>
+        </a>
+
+        <a href="#journey" class="link">Explore Journey</a>
+    </div>
+
+    <div class="destination-card zanzibar">
+        <div class="number">05</div>
+        <p>INDIAN OCEAN</p>
+
+        <a href="https://www.zanzibartourism.go.tz/" target="_blank">
+            <h1 class="name">Zanzibar <span>↗</span></h1>
+        </a>
+
+        <a href="#journey" class="link">Explore Journey</a>
+    </div>
+
+    <div class="destination-card reunion">
+        <div class="number">06</div>
+        <p>INDIAN OCEAN</p>
+
+        <a href="https://en.reunion.fr/" target="_blank">
+            <h1 class="name">Réunion Island <span>↗</span></h1>
+        </a>
+
+        <a href="#journey" class="link">Explore Journey</a>
+    </div>
+
+</section>
+
+<section class="about" id="about">
+    <p class="tag1">ABOUT OCEAN VIBES</p>
+
+    <h2 class="h2">Your Escape Into Paradise </h2>
+
+    <p class="p">
+        OceanVibes is inspired by the beauty of the sea, peaceful
+        beaches, tropical destinations and unforgettable journeys.
+        Discover beautiful places, experience luxury and find your
+        own perfect escape beyond the blue horizon.
+    </p>
+    </p>
+</section>
+</main>
+<footer class="bottom">
+    <p class="p1">© 2026 OceanVibes. Explore the beauty of the ocean.</p>
+</footer>
+</body>
+</html>
